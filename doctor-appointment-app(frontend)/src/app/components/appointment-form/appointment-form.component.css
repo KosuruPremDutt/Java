@@ -1,0 +1,77 @@
+/* appointment-form.component.css */
+
+/* Form container styling */
+form {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 15px;
+  background-color: #f8f9fa; /* light gray */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Label styling */
+label {
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+/* Input and select fields styling */
+input,
+select {
+  width: 100%;
+  padding: 8px 12px;
+  margin-top: 5px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus effect on inputs */
+input:focus,
+select:focus {
+  border-color: #495057;
+  outline: none;
+  box-shadow: 0 0 5px rgba(73, 80, 87, 0.5);
+}
+
+/* Button styling */
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  width: 100%;
+  background-color: #0d6efd; /* Bootstrap primary color */
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover */
+button:hover:not(:disabled) {
+  background-color: #0b5ed7;
+}
+
+/* Disabled button */
+button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Success message */
+.success {
+  color: #198754; /* Bootstrap success green */
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+/* Error message */
+.error {
+  color: #dc3545; /* Bootstrap danger red */
+  margin-top: 15px;
+  font-weight: 600;
+  white-space: pre-wrap; /* keep formatting in error messages */
+}

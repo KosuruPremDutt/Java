@@ -1,0 +1,43 @@
+/* Global styles and Bootstrap overrides */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.error {
+  color: red;
+  margin-top: 5px;
+}
+
+.success {
+  color: green;
+  margin-top: 5px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input, select, button {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  display: block;
+}
+
+button {
+  padding: 10px 15px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+/* Optional: Add hover effect */
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}

@@ -1,0 +1,14 @@
+<div class="doctor-container">
+  <h2>Doctor List</h2>
+
+  <div *ngIf="doctors.length > 0; else noDoctors">
+    <div class="doctor-card" *ngFor="let doctor of doctors">
+      <div class="doctor-name">{{ doctor.name }}</div>
+      <div class="doctor-specialty">{{ doctor.specialty }}</div>
+    </div>
+  </div>
+
+  <ng-template #noDoctors>
+    <p class="no-doctors">No doctors available.</p>
+  </ng-template>
+</div>
