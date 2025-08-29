@@ -1,8 +1,0 @@
-package com.wipro.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.wipro.Entities.*;
-
-public interface DoctorRepository extends JpaRepository<Doctor, Long> {
-}

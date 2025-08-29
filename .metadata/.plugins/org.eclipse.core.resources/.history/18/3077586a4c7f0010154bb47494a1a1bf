@@ -1,9 +1,0 @@
-package com.doctorrbooking.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import com.doctorbooking.service.HallService;
-
-public interface HallRepository extends JpaRepository<HallService, Long> {
-	
-}
