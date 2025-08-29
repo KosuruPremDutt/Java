@@ -1,9 +1,0 @@
-C:\Users\admin\Desktop\My_Java\demosprmysql\src\main\java\com\wipro\demosprmysql\controller\StudentRestController.java
-C:\Users\admin\Desktop\My_Java\demosprmysql\src\main\java\com\wipro\demosprmysql\DemosprmysqlApplication.java
-C:\Users\admin\Desktop\My_Java\demosprmysql\src\main\java\com\wipro\demosprmysql\entity\Student.java
-C:\Users\admin\Desktop\My_Java\demosprmysql\src\main\java\com\wipro\demosprmysql\exception\ErrorResponse.java
-C:\Users\admin\Desktop\My_Java\demosprmysql\src\main\java\com\wipro\demosprmysql\exception\GlobalControllerExceptionHandler.java
-C:\Users\admin\Desktop\My_Java\demosprmysql\src\main\java\com\wipro\demosprmysql\exception\StudentNotFoundException.java
-C:\Users\admin\Desktop\My_Java\demosprmysql\src\main\java\com\wipro\demosprmysql\repository\StudentRepository.java
-C:\Users\admin\Desktop\My_Java\demosprmysql\src\main\java\com\wipro\demosprmysql\service\StudentService.java
-C:\Users\admin\Desktop\My_Java\demosprmysql\src\main\java\com\wipro\demosprmysql\service\StudentServiceImpl.java
