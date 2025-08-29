@@ -1,0 +1,25 @@
+package com.wipro.controller;
+
+import com.wipro.repository.DoctorRepository;
+import com.wipro.repository.AppointmentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class DashboardController {
+
+    @Autowired
+    private DoctorRepository doctorRepository;
+
+    @Autowired
+    private AppointmentRepository appointmentRepository;
+
+    @GetMapping("/dashboard")
+    public String dashboard(Model model) {
+        model.addAttribute("doctors", doctorRepository.findAll());
+        model.addAttribute("appointments", appointmentRepository.findAll());
+        return "dashboard"; 
+    }
+}

@@ -1,0 +1,95 @@
+# --------------------------
+# FRONTEND DEPLOYMENT + SERVICE
+# --------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: premdutt/appointment-frontend:latest
+          ports:
+            - containerPort: 80
+          # Optional resource limits
+          # resources:
+          #   requests:
+          #     cpu: "100m"
+          #     memory: "128Mi"
+          #   limits:
+          #     cpu: "250m"
+          #     memory: "256Mi"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  selector:
+    app: frontend
+  ports:
+    - port: 80
+      targetPort: 80
+      # nodePort: 30080    # Uncomment if you want a fixed NodePort
+  type: NodePort
+
+# --------------------------
+# BACKEND DEPLOYMENT + SERVICE
+# --------------------------
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          image: premdutt/appointment-backend:latest
+          ports:
+            - containerPort: 8080
+          env:
+            - name: SPRING_DATASOURCE_URL
+              value: jdbc:mysql://mysql:3306/doctor_appointment_db
+            - name: SPRING_DATASOURCE_USERNAME
+              value: root
+            - name: SPRING_DATASOURCE_PASSWORD
+              value: Password@1
+          # Optional resource limits
+          # resources:
+          #   requests:
+          #     cpu: "200m"
+          #     memory: "256Mi"
+          #   limits:
+          #     cpu: "500m"
+          #     memory: "512Mi"
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: backend
+  ports:
+    - port: 8080
+      targetPort: 8080
+  type: ClusterIP

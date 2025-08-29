@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Copy Project &apos;Springbootdemo&apos;" description="Copy Project &apos;Springbootdemo&apos;" destination="C:/Users/admin/Desktop/My_Java" element="/Springbootdemo" flags="7" id="org.eclipse.ltk.core.refactoring.copyproject.resource" name="springhelm" stamp="1755584873769"/>&#x0A;<refactoring comment="Rename resource &apos;demoaprmysql&apos; to &apos;demosprmysql&apos;" description="Rename resource &apos;demoaprmysql&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/demoaprmysql" name="demosprmysql" stamp="1755751068578" updateReferences="true"/>
+</session>

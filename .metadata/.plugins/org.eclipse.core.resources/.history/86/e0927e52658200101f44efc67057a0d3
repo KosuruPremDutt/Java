@@ -1,0 +1,13 @@
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: Password@1
+      MYSQL_DATABASE: doctor_appointment_db
+      # MYSQL_USER: root
+      MYSQL_PASSWORD: Password@1
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql

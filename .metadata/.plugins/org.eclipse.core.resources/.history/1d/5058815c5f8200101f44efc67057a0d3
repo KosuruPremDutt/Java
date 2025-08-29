@@ -1,0 +1,32 @@
+services:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-containernew
+    environment:
+      MYSQL_ROOT_PASSWORD: Password@1
+      MYSQL_DATABASE: doctor_appointment_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Password@1
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  springboot-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: springboot-container
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql-db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/doctor_appointment_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Password@1
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    restart: on-failure
+
+volumes:
+  mysql-data:

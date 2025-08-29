@@ -1,0 +1,27 @@
+package com.wipro.controller;
+
+import com.wipro.Entities.Appointment;
+import com.wipro.repository.AppointmentRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/api/appointments")
+public class AppointmentController {
+
+    @Autowired
+    private AppointmentRepository appointmentRepo;
+
+    @GetMapping
+    public List<Appointment> getAllAppointments() {
+        return appointmentRepo.findAll();
+    }
+
+    @PostMapping
+    public Appointment addAppointment(@RequestBody Appointment appointment) {
+        return appointmentRepo.save(appointment);
+    }
+}

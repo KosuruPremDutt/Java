@@ -1,0 +1,10 @@
+package com.doctorrbooking.repository;
+
+package com.doctorbooking.doctorapp.repository;
+
+import com.doctorbooking.doctorapp.model.Booking;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface BookingRepository extends JpaRepository<Booking, Long> {
+	
+}

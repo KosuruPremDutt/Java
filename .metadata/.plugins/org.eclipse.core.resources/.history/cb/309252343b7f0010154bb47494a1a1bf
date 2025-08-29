@@ -1,0 +1,5 @@
+package com.doctorrbooking.repository;
+
+public class BookingRepository {
+
+}

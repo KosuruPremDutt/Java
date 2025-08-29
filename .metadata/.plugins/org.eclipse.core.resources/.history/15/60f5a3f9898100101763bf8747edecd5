@@ -1,0 +1,31 @@
+package com.wipro.controller;
+
+import com.wipro.Model.Entities.Appointment;
+import com.wipro.repository.AppointmentRepository;
+import com.wipro.repository.DoctorRepository;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/appointments")
+public class AppontmentController {
+
+    private final AppointmentRepository appointmentRepo;
+    private final DoctorRepository doctorRepo;
+
+    public AppontmentController(AppointmentRepository appointmentRepo, DoctorRepository doctorRepo) {
+        this.appointmentRepo = appointmentRepo;
+        this.doctorRepo = doctorRepo;
+    }
+
+    @GetMapping
+    public List<Appointment> getAllAppointments() {
+        return appointmentRepo.findAll();
+    }
+
+    @PostMapping
+    public Appointment bookAppointment(@RequestBody Appointment appointment) {
+        return appointmentRepo.save(appointment);
+    }
+}
